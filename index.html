@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 웹사이트</title>
+    <title>정상현 파이널 이벤트</title>
+    <meta name="description" content="final-event">
+
+    <!-- Twitter summary card -->
+    <meta name="twitter:title" content="정상현 파이널 이벤트">
+    <meta name="twitter:description" content="설명설명">
+    <meta name="twitter:url" content="https://sanghyeon919.github.io/final-event/">
+    <meta name="twitter:image" content="https://sanghyeon919.github.io/final-event/asset/banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="정상현 파이널 이벤트" />
+    <meta property="og:description" content="정상현 파이널 이벤트" />
+    <meta property="og:image" content="https://sanghyeon919.github.io/final-event/asset/banner.png" />
+    <meta property="og:url" content="https://sanghyeon919.github.io/final-event/" />
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,11 +67,19 @@
         </div>
     </footer>
 
-    <!-- 플로팅 버튼 -->
-    <div class="floating-button">
-        <a href="https://share.mnetplus.world/boys2planet" target="_blank" rel="noopener noreferrer" class="vote-btn">
-            <span class="vote-text">투표하러 가기</span>
-        </a>
+    <!-- 플로팅 메뉴 -->
+    <div class="floating-menu">
+        <div class="floating-menu-items">
+            <a href="https://pf.kakao.com/_FwYGs" target="_blank" rel="noopener noreferrer" class="menu-item" data-tooltip="플러스친구 바로가기">
+                <span class="menu-icon">💬</span>
+            </a>
+            <a href="https://share.mnetplus.world/boys2planet" target="_blank" rel="noopener noreferrer" class="menu-item" data-tooltip="투표하기">
+                <span class="menu-icon">🗳️</span>
+            </a>
+        </div>
+        <button class="floating-toggle" onclick="toggleFloatingMenu()">
+            <span class="plus-icon">+</span>
+        </button>
     </div>
 
     <script>
@@ -72,6 +95,26 @@
                     });
                 }
             });
+        });
+
+        // 플로팅 메뉴 토글 함수
+        function toggleFloatingMenu() {
+            const menu = document.querySelector('.floating-menu');
+            const toggle = document.querySelector('.floating-toggle');
+            
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // 메뉴 외부 클릭 시 닫기
+        document.addEventListener('click', function(e) {
+            const menu = document.querySelector('.floating-menu');
+            const toggle = document.querySelector('.floating-toggle');
+            
+            if (!menu.contains(e.target)) {
+                menu.classList.remove('active');
+                toggle.classList.remove('active');
+            }
         });
     </script>
 </body>
