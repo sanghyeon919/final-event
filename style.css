@@ -87,6 +87,15 @@ nav {
     color: #5400FF;
 }
 
+/* 반응형 텍스트 */
+.tab-text-short {
+    display: none;
+}
+
+.tab-text-full {
+    display: inline;
+}
+
 /* 참여방법 섹션 */
 .how-to-participate {
     text-align: center;
@@ -413,6 +422,15 @@ footer {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    /* 모바일에서 짧은 텍스트 표시 */
+    .tab-text-full {
+        display: none;
+    }
+    
+    .tab-text-short {
+        display: inline;
     }
 
     main {
