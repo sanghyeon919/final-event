@@ -11,6 +11,10 @@
         font-size: 0.65rem;
         padding: 0.4rem 0.05rem;
     }
+
+    .footer-bottom p {
+        font-size: 0.65rem;
+    }
 }
 
 @media (max-width: 380px) {
@@ -21,6 +25,10 @@
     .nav-menu a {
         font-size: 0.6rem;
         padding: 0.3rem 0.05rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.6rem;
     }
 }@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -481,6 +489,10 @@ footer {
 
     footer {
         padding: 2rem 0 1rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
     }
 
     /* 플로팅 메뉴 모바일 */
