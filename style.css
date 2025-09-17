@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@media (max-width: 480px) {
+    .logo {
+        font-size: 0.9rem !important;
+    }
+    
+    .nav-container {
+        padding: 0 0.3rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 0.8rem !important;
+    }
+}@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -37,6 +51,7 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -147,7 +162,7 @@ footer {
 }
 
 .footer-section h4 {
-    color: white;
+    color: #FFFF77;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
 }
@@ -159,7 +174,7 @@ footer {
 }
 
 .footer-section a {
-    color: #FFF554;
+    color: #95a5a6;
     text-decoration: none;
     display: block;
     margin-bottom: 0.3rem;
@@ -329,6 +344,14 @@ footer {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 
     .nav-menu {
@@ -399,9 +422,16 @@ footer {
         font-size: 18px;
     }
 
-    /* 모바일에서는 툴팁 숨기기 */
-    .menu-item::before,
-    .menu-item::after {
-        display: none;
+    /* 모바일에서도 툴팁 표시 - 위치만 조정 */
+    .menu-item::before {
+        right: 50px;
+        font-size: 12px;
+        padding: 6px 10px;
     }
+
+    .menu-item::after {
+        right: 40px;
+        border-width: 5px;
+    }
+}
 }
