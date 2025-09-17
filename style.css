@@ -72,15 +72,44 @@ nav {
     background-color: #6A1FFF;
 }
 
+.nav-menu a.active {
+    background-color: white;
+    color: #5400FF;
+}
+
+/* 참여방법 섹션 */
+.how-to-participate {
+    text-align: center;
+}
+
+/* 콘텐츠 섹션 전환 */
+.content-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* 메인 콘텐츠 */
 main {
     margin-top: 80px; /* 네비게이션 바 높이만큼 여백 */
     padding: 2rem;
+    min-height: calc(100vh - 80px - 200px); /* 전체 화면 높이 - nav - footer 예상 높이 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 콘텐츠 가로 중앙 정렬 */
 }
 
 /* 섹션 공통 스타일 */
@@ -360,6 +389,7 @@ footer {
 
     main {
         margin-top: 120px;
+        min-height: calc(100vh - 120px - 150px);
     }
 
     /* 1차 투표 이벤트 섹션 */
@@ -370,6 +400,12 @@ footer {
 
     /* 소개 섹션 */  
     .final-event .section-image {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* 참여방법 섹션 */
+    .how-to-participate .section-image {
         width: 100%;
         max-width: none;
     }
@@ -433,5 +469,4 @@ footer {
         right: 40px;
         border-width: 5px;
     }
-}
 }

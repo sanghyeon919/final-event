@@ -27,8 +27,9 @@
         <div class="nav-container">
             <a href="#" class="logo">보이즈2플래닛 정상현 파이널 이벤트</a>
             <ul class="nav-menu">
-                <li><a href="#prev">1차 투표 이벤트</a></li>
-                <li><a href="#final">파이널 투표 이벤트</a></li>
+                <li><a href="#" onclick="showSection('prev')" class="nav-link active" data-target="prev">1차 투표 이벤트</a></li>
+                <li><a href="#" onclick="showSection('final')" class="nav-link" data-target="final">파이널 투표 이벤트</a></li>
+                <li><a href="#" onclick="showSection('how')" class="nav-link" data-target="how">참여방법</a></li>
             </ul>
         </div>
     </nav>
@@ -37,16 +38,21 @@
     <main>
         <div class="container">
             <!-- 1차 투표 이벤트 섹션 -->
-            <section class="section prev-event" id="prev">
+            <section class="section prev-event content-section active" id="prev">
                 <img src="temp.png" alt="1차 투표 이벤트" class="section-image">
             </section>
 
-            <!-- 소개 섹션 -->
-            <section class="section final-event" id="final">
+            <!-- 파이널 투표 이벤트 섹션 -->
+            <section class="section final-event content-section" id="final">
                 <div class="coming-soon">
                     <h2>생방송 투표 이벤트</h2>
                     <p>Coming Soon...</p>
                 </div>
+            </section>
+
+            <!-- 참여방법 섹션 -->
+            <section class="section how-to-participate content-section" id="how">
+                <img src="temp.png" alt="참여방법" class="section-image">
             </section>
         </div>
     </main>
@@ -70,7 +76,7 @@
     <!-- 플로팅 메뉴 -->
     <div class="floating-menu">
         <div class="floating-menu-items">
-            <a href="http://pf.kakao.com/_cnyen" target="_blank" rel="noopener noreferrer" class="menu-item" data-tooltip="플러스친구 바로가기">
+            <a href="https://pf.kakao.com/_FwYGs" target="_blank" rel="noopener noreferrer" class="menu-item" data-tooltip="플러스친구 바로가기">
                 <span class="menu-icon">💬</span>
             </a>
             <a href="https://share.mnetplus.world/boys2planet" target="_blank" rel="noopener noreferrer" class="menu-item" data-tooltip="투표하기">
@@ -83,19 +89,26 @@
     </div>
 
     <script>
-        // 부드러운 스크롤 효과
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // 섹션 전환 함수
+        function showSection(targetSection) {
+            // 모든 콘텐츠 섹션 숨기기
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
             });
-        });
+            
+            // 모든 네비게이션 링크에서 active 클래스 제거
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 타겟 섹션 보이기
+            document.getElementById(targetSection).classList.add('active');
+            
+            // 해당 네비게이션 링크에 active 클래스 추가
+            document.querySelector(`[data-target="${targetSection}"]`).classList.add('active');
+        }
 
         // 플로팅 메뉴 토글 함수
         function toggleFloatingMenu() {
