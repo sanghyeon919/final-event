@@ -8,18 +8,19 @@
 
     <!-- Twitter summary card -->
     <meta name="twitter:title" content="정상현 파이널 이벤트">
-    <meta name="twitter:description" content="✨하루 1분 투자로 매일매일 맥북 받아가세요! 🎁">
+    <meta name="twitter:description" content="✨오늘 하루 정상현 뽑고 2007개 선물 받아가세요!🎁">
     <meta name="twitter:url" content="https://sanghyeon919.github.io/final-event/">
     <meta name="twitter:image" content="https://sanghyeon919.github.io/final-event/asset/banner.jpeg">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Open Graph -->
     <meta property="og:title" content="정상현 파이널 이벤트" />
-    <meta property="og:description" content="✨하루 1분 투자로 매일매일 맥북 받아가세요! 🎁" />
+    <meta property="og:description" content="✨오늘 하루 정상현 뽑고 2007개 선물 받아가세요!🎁" />
     <meta property="og:image" content="https://sanghyeon919.github.io/final-event/asset/banner.jpeg" />
     <meta property="og:url" content="https://sanghyeon919.github.io/final-event/" />
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="firstcome.css">
 </head>
 <body>
     <!-- 네비게이션 바 -->
@@ -30,6 +31,7 @@
                 <li><a href="#" onclick="showSection('prev')" class="nav-link active" data-target="prev">1차 투표 이벤트</a></li>
                 <li><a href="#" onclick="showSection('final')" class="nav-link" data-target="final">생방송 투표 이벤트</a></li>
                 <li><a href="#" onclick="showSection('how')" class="nav-link" data-target="how">참여 방법</a></li>
+                <li><a href="#" onclick="showSection('firstcome')" class="nav-link" data-target="firstcome">선착순 참여 방법</a></li>
             </ul>
         </div>
     </nav>
@@ -48,10 +50,14 @@
 
             <!-- 파이널 투표 이벤트 섹션 -->
             <section class="section final-event content-section" id="final">
-                <div class="coming-soon">
-                    <h2>생방송 투표 이벤트</h2>
-                    <p>Coming Soon...</p>
-                </div>
+                <img src="title.jpg" alt="파이널 생방송 투표 이벤트" class="section-image">
+                <img src="page1_v004.jpg" alt="파이널 생방송 투표 이벤트" class="section-image">
+                <img src="page2_v003.jpg" alt="파이널 생방송 투표 이벤트" class="section-image">
+                <img src="page3_v003.jpg" alt="파이널 생방송 투표 이벤트" class="section-image">
+                <p>
+                    추가 트위터 계정 안내 드립니다.<br>
+                    X @DC_sanghyeon2
+                </p>
             </section>
 
             <!-- 참여방법 섹션 -->
@@ -61,6 +67,30 @@
                     추가 트위터 계정 안내 드립니다.<br>
                     X @DC_sanghyeon2
                 </p>
+            </section>
+
+            <!-- 선착순 참여방법 섹션 -->
+            <section class="section firstcome-participate content-section" id="firstcome">
+                <img src="page3_v003.jpg" alt="파이널 생방송 투표 이벤트" class="section-image">
+                <div class="firstcome-content">
+                    <p>
+                        추가 트위터 계정 안내 드립니다.<br>
+                        X @DC_sanghyeon2
+                    </p>
+                    <div class="notice-section">
+                        <p class="important-notice">
+                            선착순 폼 링크 접속 버튼은 <strong class="time-highlight">20시 20분 정각</strong>에 열리며,</br> 개근 희망 및 파이널 생방송 투표를 원하시는 분께서는 </br><strong class="kakao-highlight">응모용 카카오톡 채널</strong> 계정 챗봇으로 인증서를 </br><strong class="repeat-highlight">한 번 더</strong> 보내 주셔야 합니다
+                        </p>
+                    </div>
+                    <div class="countdown-section">
+                        <div id="countdown-timer" class="countdown-timer">
+                            <span id="countdown-display">00:00:00</span>
+                        </div>
+                        <button id="reveal-button" class="reveal-button" onclick="revealRandomLink()" disabled>
+                            선착순 링크 공개
+                        </button>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
@@ -97,6 +127,116 @@
     </div>
 
     <script>
+        // 50개의 랜덤 링크 배열
+        const randomLinks = [
+            'https://example1.com',
+            'https://example2.com',
+            'https://example3.com',
+            'https://example4.com',
+            'https://example5.com',
+            'https://example6.com',
+            'https://example7.com',
+            'https://example8.com',
+            'https://example9.com',
+            'https://example10.com',
+            'https://example11.com',
+            'https://example12.com',
+            'https://example13.com',
+            'https://example14.com',
+            'https://example15.com',
+            'https://example16.com',
+            'https://example17.com',
+            'https://example18.com',
+            'https://example19.com',
+            'https://example20.com',
+            'https://example21.com',
+            'https://example22.com',
+            'https://example23.com',
+            'https://example24.com',
+            'https://example25.com',
+            'https://example26.com',
+            'https://example27.com',
+            'https://example28.com',
+            'https://example29.com',
+            'https://example30.com',
+            'https://example31.com',
+            'https://example32.com',
+            'https://example33.com',
+            'https://example34.com',
+            'https://example35.com',
+            'https://example36.com',
+            'https://example37.com',
+            'https://example38.com',
+            'https://example39.com',
+            'https://example40.com',
+            'https://example41.com',
+            'https://example42.com',
+            'https://example43.com',
+            'https://example44.com',
+            'https://example45.com',
+            'https://example46.com',
+            'https://example47.com',
+            'https://example48.com',
+            'https://example49.com',
+            'https://example50.com'
+        ];
+
+        // 공개 시간 설정 (예: 2025년 9월 25일 15:00)
+        const revealTime = new Date('2025-09-25T20:20:00+09:00');
+
+        // 카운트다운 업데이트 함수
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = revealTime - now;
+            
+            const countdownDisplay = document.getElementById('countdown-display');
+            const revealButton = document.getElementById('reveal-button');
+            
+            if (timeLeft <= 0) {
+                countdownDisplay.textContent = '지금 바로 클릭하세요!';
+                countdownDisplay.classList.remove('urgent');
+                revealButton.disabled = false;
+                revealButton.classList.add('active');
+                clearInterval(countdownInterval);
+            } else {
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                countdownDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                
+                // 10초 이하일 때 urgent 클래스 추가
+                if (timeLeft <= 10000) { // 10초 = 10000ms
+                    countdownDisplay.classList.add('urgent');
+                } else {
+                    countdownDisplay.classList.remove('urgent');
+                }
+            }
+        }
+
+        // 랜덤 링크 공개 함수
+        function revealRandomLink() {
+            const now = new Date();
+            if (now < revealTime) {
+                alert('아직 공개 시간이 아닙니다!');
+                return;
+            }
+
+            // 랜덤 링크 선택
+            const randomIndex = Math.floor(Math.random() * randomLinks.length);
+            const selectedLink = randomLinks[randomIndex];
+            
+            // 새 탭에서 선택된 링크로 바로 이동
+            window.open(selectedLink, '_blank');
+        }
+
+        // 페이지 로드 시 카운트다운 시작
+        let countdownInterval;
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+        });
+
         // 섹션 전환 함수
         function showSection(targetSection) {
             // 모든 콘텐츠 섹션 숨기기
